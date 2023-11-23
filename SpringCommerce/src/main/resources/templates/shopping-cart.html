@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">Tiệm giày cũ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+            <ul class="navbar-nav m-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/shopping-cart">Giỏ hàng</a>
+                </li>
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                <div class="input-group input-group-sm">
+                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search...">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-secondary btn-number">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <a class="btn btn-success btn-sm ml-3" href="/shopping-cart">
+                    <i class="fa fa-shopping-cart"></i> Giỏ hàng
+                    <span class="badge badge-light" th:text="${quantity_cart}"></span>
+                </a>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container bg-white rounded-top mt-5" id="zero-pad">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-10 col-12 pt-3" id="productsContainer">
+            <div class="d-flex flex-column pt-4">
+                <div><h5 class="text-uppercase font-weight-normal">Giỏ hàng</h5></div>
+                <div class="font-weight-normal" th:text="${quantity_cart} + ' món hàng'"></div>
+            </div>
+            <div class="d-flex flex-row px-lg-5 mx-lg-5 mobile" id="heading">
+                <div class="px-lg-5 mr-lg-5" id="produc">Sản phẩm</div>
+                <div class="px-lg-5 ml-lg-5" id="prc">Giá</div>
+                <div class="px-lg-5 ml-lg-1" id="quantity">Số lượng</div>
+                <div class="px-lg-5 ml-lg-3" id="total">Tổng</div>
+            </div>
+
+            <div th:each="cart_product : ${cart_products}" class="d-flex flex-row justify-content-between align-items-center pt-lg-4 pt-2 pb-3 border-bottom mobile">
+                <div class="d-flex flex-row align-items-center">
+                    <div><img th:src="@{'img/' + ${cart_product.getProductDTO().getImage()}}" width="150" height="150" alt="" id="image"></div>
+                    <div class="d-flex flex-column pl-md-3 pl-1">
+                        <div><h6>COTTON T-SHIRT</h6></div>
+                        <div >Trạng thái:<span class="pl-2">cũ</span></div>
+                        <div>Màu sắc:<span class="pl-3" th:text="${cart_product.getProductDTO().getColor().toUpperCase()}" th:style="'color:' + ${cart_product.getProductDTO().getColor()}"></span></div>
+                        <div>Size:<span class="pl-4" th:text="${cart_product.getProductDTO().getSize()}"></span></div>
+                    </div>
+                </div>
+                <div class="pl-md-0 pl-1"><b th:text="${cart_product.getProductDTO().getPrice()}"></b></div>
+                <div class="pl-md-0 pl-2">
+
+                    <a class="btn fa fa-minus-square text-secondary"
+                          th:id="'decreaseValue'+${cart_product.getProductId()}"
+                          th:href="@{'/shopping-cart/minus/' + ${cart_product.getProductId()}}">
+                    </a>
+
+                    <span class="px-md-3 px-1"
+                          th:id="'displayValue'+${cart_product.getProductId()}"
+                          th:text="${cart_product.getQuantity()}">
+
+                    </span>
+
+                    <a class="btn fa fa-plus-square text-secondary"
+                          th:id="'increaseValue'+${cart_product.getProductId()}"
+                          th:href="@{'/shopping-cart/add/' + ${cart_product.getProductId()}}">
+
+                    </a>
+
+                </div>
+                <div class="pl-md-0 pl-1"><b th:text="${cart_product.getProductDTO().getPrice()} * ${cart_product.getQuantity()}"></b></div>
+                <a class="close"
+                     th:href="@{'/shopping-cart/remove/' + ${cart_product.getProductId()}}">&times;</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container bg-light rounded-bottom py-4" id="zero-pad">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-10 col-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <a class="btn btn-sm bg-light border border-dark" href="/">Quay lại</a>
+                </div>
+                <div class="px-md-0 px-1" id="footer-font">
+                    <b class="pl-md-4">Tổng tiền tất cả<span class="pl-md-4" th:text="${total}"></span></b>
+                </div>
+                <div th:if="${quantity_cart != 0}">
+                    <a class="btn btn-sm bg-dark text-white px-lg-5 px-3" href="/checkout">Thanh toán</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

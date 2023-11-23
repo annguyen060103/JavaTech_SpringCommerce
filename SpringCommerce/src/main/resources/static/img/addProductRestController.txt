@@ -1,0 +1,152 @@
+{
+    "name": "Dunk High",
+    "price": 4299000,
+    "color": "white & blue",
+    "size": 40,
+    "image": "1.jpg",
+    "brand_id": 1
+}
+
+{
+    "name": "YZ 700 WR",
+    "price": 2400000,
+    "color": "beige & black",
+    "size": 42,
+    "image": "2.jpg",
+    "brand_id": 2
+}
+
+{
+    "name": "MLB Chunky NY",
+    "price": 1650000,
+    "color": "white & black",
+    "size": 38,
+    "image": "3.jpg",
+    "brand_id": 3
+}
+
+{
+    "name": "NB 550 White",
+    "price": 1250000,
+    "color": "white & grey",
+    "size": 44,
+    "image": "4.jpg",
+    "brand_id": 4
+}
+
+{
+    "name": "Gucci Bee",
+    "price": 3500000,
+    "color": "white & green",
+    "size": 8,
+    "image": "5.jpg",
+    "brand_id": 5
+}
+
+{
+    "name": "MLB Playball",
+    "price": 850000,
+    "color": "white & black",
+    "size": 42,
+    "image": "6.jpg",
+    "brand_id": 3
+}
+
+{
+    "name": "Dunk Low OF",
+    "price": 6500000,
+    "color": "white & green",
+    "size": 44,
+    "image": "7.jpg",
+    "brand_id": 1
+}
+
+{
+    "name": "Dunk High SAS",
+    "price": 1150000,
+    "color": "white & black",
+    "size": 42,
+    "image": "8.jpg",
+    "brand_id": 1
+}
+
+{
+    "name": "Samba Classic",
+    "price": 1250000,
+    "color": "white & black",
+    "size": 42,
+    "image": "9.jpg",
+    "brand_id": 2
+}
+
+{
+    "name": "JD1 Mid HRTL",
+    "price": 1950000,
+    "color": "black & blue",
+    "size": 43,
+    "image": "10.jpg",
+    "brand_id": 1
+}
+
+{
+    "name": "YZ Foam RNNR",
+    "price": 2000000,
+    "color": "beige",
+    "size": 44,
+    "image": "11.jpg",
+    "brand_id": 2
+}
+
+{
+    "name": "Gucci Slide",
+    "price": 2200000,
+    "color": "green",
+    "size": 6,
+    "image": "12.jpg",
+    "brand_id": 5
+}
+
+{
+    "name": "YZ 700 V2",
+    "price": 1950000,
+    "color": "grey",
+    "size": 43,
+    "image": "13.jpg",
+    "brand_id": 2
+}
+
+{
+    "name": "Air Max 97 MG",
+    "price": 1050000,
+    "color": "golden",
+    "size": 40,
+    "image": "14.jpg",
+    "brand_id": 1
+}
+
+{
+    "name": "MLB Chunky Navy",
+    "price": 1250000,
+    "color": "white & black",
+    "size": 42,
+    "image": "15.jpg",
+    "brand_id": 3
+}
+
+{
+    "name": "JD Dub Zero",
+    "price": 999000,
+    "color": "White & red",
+    "size": 41,
+    "image": "16.jpg",
+    "brand_id": 1
+}
+
+{
+    "name": "NB 550",
+    "price": 1250000,
+    "color": "white & blue",
+    "size": 42,
+    "image": "17.jpg",
+    "brand_id": 4
+}
